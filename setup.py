@@ -28,4 +28,7 @@ setup(
     install_requires=[
 
     ],
+    dependency_links=[
+        "git+git://github.com/yarlson/django-jinja2-zurb-foundation.git#egg=django-jinja2-zurb-foundation"
+    ]
 )

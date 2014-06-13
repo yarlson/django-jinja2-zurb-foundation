@@ -1,5 +1,3 @@
-{% load static %}
-{% load foundation_tags %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -12,16 +10,16 @@
 
     {# Base Foundation CSS #}
     {% block foundation_css %}
-    {% foundation_css "normalize" %}
-    {% foundation_css "foundation.min" %}
-    {% endblock foundation_css %}  
-    
+    {{ foundation_css("normalize") }}
+    {{ foundation_css("foundation.min") }}
+    {% endblock foundation_css %}
+
     {# Custom CSS #}
     {% block css %}{% endblock css %}
 
     {# Override if you need another version of modernizr #}
     {% block foundation_modernizer %}
-    {% foundation_vendor "modernizr" %}
+    {{ foundation_vendor("modernizr") }}
     {% endblock foundation_modernizer %}
 
     {# Custom head JS #}
@@ -33,12 +31,12 @@
 
     {# Override if you need another version of jQuery #}
     {% block foundation_jquery %}
-    {% foundation_vendor "jquery" %}
+    {{ foundation_vendor("jquery") }}
     {% endblock foundation_jquery %}
 
     {# Foundation JS #}
     {% block foundation_js %}
-    {% foundation_js %}
+    {{ foundation_js() }}
     {% endblock foundation_js %}
 
     {# Custom JS #}
